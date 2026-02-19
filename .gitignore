@@ -1,5 +1,14 @@
+# Dependency folders
 node_modules/
+
+# Environment files (the ** makes it check every folder)
+**/.env
 .env
+
+# Server-specific uploads
 server/uploads/*
 !server/uploads/.gitkeep
+
+# Build files
 dist/
+build/
