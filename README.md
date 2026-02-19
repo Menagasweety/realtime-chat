@@ -100,7 +100,7 @@ Push this project to GitHub (or another Render-supported Git provider).
 After first deploy, update these values in Render:
 
 - `realtime-chat-api`:
-  - `MONGODB_URI` = `mongodb+srv://menaganadar28_db_user:<db_password>@cluster0.qjmeqea.mongodb.net/?appName=Cluster0` (replace `<db_password>`)
+  - `MONGODB_URI` = `(replace with your mongodb atlas url to store the data)` (replace `<db_password>`)
   - `CLIENT_URL` = your frontend URL (for example `https://realtime-chat-web.onrender.com`)
   - Optional: `CLIENT_URLS` = comma-separated extra allowed origins (preview/staging URLs)
 
