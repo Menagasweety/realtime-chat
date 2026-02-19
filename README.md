@@ -62,8 +62,9 @@ Set `MONGODB_URI` in `server/.env`.
 
 Atlas template already included:
 ```text
-mongodb+srv://menaganadar28_db_user:<db_password>@cluster0.qjmeqea.mongodb.net/realtime_chat
+mongodb+srv://menaganadar28_db_user:<db_password>@cluster0.qjmeqea.mongodb.net/?appName=Cluster0
 ```
+Replace `<db_password>` with your Atlas DB user password and URL-encode special characters.
 
 Install and run:
 ```powershell
@@ -99,7 +100,7 @@ Push this project to GitHub (or another Render-supported Git provider).
 After first deploy, update these values in Render:
 
 - `realtime-chat-api`:
-  - `MONGODB_URI` = your MongoDB Atlas/local production URI
+  - `MONGODB_URI` = `mongodb+srv://menaganadar28_db_user:<db_password>@cluster0.qjmeqea.mongodb.net/?appName=Cluster0` (replace `<db_password>`)
   - `CLIENT_URL` = your frontend URL (for example `https://realtime-chat-web.onrender.com`)
   - Optional: `CLIENT_URLS` = comma-separated extra allowed origins (preview/staging URLs)
 
