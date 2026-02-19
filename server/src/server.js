@@ -15,10 +15,10 @@ const bootstrap = async () => {
   const { io } = initSocket(httpServer);
   app.set('io', io);
 
-  httpServer.listen(port, () => {
-    console.log(`Server listening on http://localhost:${port}`);
-  });
-};
+  httpServer.listen(port, '0.0.0.0', () => {
+  console.log(`Server listening on port ${port}`);
+});
+
 
 bootstrap().catch((error) => {
   console.error('Failed to start server', error);
