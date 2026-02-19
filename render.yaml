@@ -7,31 +7,16 @@ services:
     startCommand: npm start
     healthCheckPath: /api/health
     envVars:
-      - key: NODE_ENV
-        value: production
-      - key: PORT
-        value: 10000
       - key: MONGODB_URI
         sync: false
       - key: JWT_SECRET
-        generateValue: true
-      - key: JWT_EXPIRES_IN
-        value: 7d
-      - key: COOKIE_NAME
-        value: chat_token
-      - key: COOKIE_SAME_SITE
-        value: none
-      - key: COOKIE_SECURE
-        value: true
+        sync: false
       - key: CLIENT_URL
         sync: false
-      - key: CLIENT_URLS
-        sync: false
-      - key: MAX_FILE_SIZE_MB
-        value: 15
 
-  - type: static_site
+  - type: web
     name: realtime-chat-web
+    env: static
     rootDir: client
     buildCommand: npm ci && npm run build
     staticPublishPath: dist
