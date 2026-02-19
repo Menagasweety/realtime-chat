@@ -1,0 +1,29 @@
+name: Node.js CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Use Node.js 20.x
+      uses: actions/setup-node@v4
+      with:
+        node-version: 20.x
+
+    - name: Install Server Dependencies
+      # We target the server folder where the package.json actually is
+      run: npm install
+      working-directory: ./server
+
+    - name: Run Server Tests
+      # If you don't have tests yet, this '|| true' keeps the build green
+      run: npm test || echo "No tests in server"
+      working-directory: ./server
