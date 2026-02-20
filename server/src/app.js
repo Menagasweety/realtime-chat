@@ -9,6 +9,7 @@ import chatRoutes from './routes/chatRoutes.js';
 import groupRoutes from './routes/groupRoutes.js';
 import uploadRoutes from './routes/uploadRoutes.js';
 
+console.log("CLIENT_URL:", process.env.CLIENT_URL);
 const app = express();
 
 const allowLocalOrigin = (origin) => {
