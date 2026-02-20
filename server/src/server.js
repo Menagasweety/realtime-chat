@@ -16,9 +16,9 @@ const bootstrap = async () => {
   app.set('io', io);
 
   httpServer.listen(port, '0.0.0.0', () => {
-  console.log(`Server listening on port ${port}`);
-});
-
+    console.log(`Server listening on port ${port}`);
+  });
+}; // ✅ THIS WAS MISSING
 
 bootstrap().catch((error) => {
   console.error('Failed to start server', error);
