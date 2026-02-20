@@ -27,16 +27,30 @@ const parseConfiguredOrigins = () => {
   );
 };
 
+const allowedOrigins = parseConfiguredOrigins();
+
 app.use(
   cors({
     origin: (origin, cb) => {
-      const configuredOrigins = parseConfiguredOrigins();
-      if (allowLocalOrigin(origin) || configuredOrigins.has(origin)) return cb(null, true);
-      return cb(new Error('Not allowed by CORS'));
+      // allow requests with no origin (Postman, health checks)
+      if (!origin) return cb(null, true);
+
+      if (allowLocalOrigin(origin) || allowedOrigins.has(origin)) {
+        return cb(null, true);
+      }
+
+      console.log("CORS blocked origin:", origin);
+      console.log("Allowed origins:", Array.from(allowedOrigins));
+      return cb(null, false); // ✅ DO NOT THROW ERROR
     },
-    credentials: true
+    credentials: true,
+    methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
   })
 );
+
+// ✅ handle preflight properly
+app.options("*", cors());
 
 app.use(express.json({ limit: '2mb' }));
 app.use(cookieParser());
