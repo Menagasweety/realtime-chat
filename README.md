@@ -165,3 +165,6 @@ Creates:
 - Message receipts are persisted (`sent` / `delivered` / `read`) and updated in realtime.
 - Chat history supports cursor-based infinite scroll via `before` + `limit`.
 - UI includes light/dark theme, accent picker, glassmorphism, animated typing dots, online pulse, skeletons, reconnect banner, custom scrollbar, and reduced-motion support.
+
+
+This is the live link =>https://realtime-chat-1-4tp1.onrender.com enjoy
