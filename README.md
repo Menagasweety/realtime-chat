@@ -167,4 +167,4 @@ Creates:
 - UI includes light/dark theme, accent picker, glassmorphism, animated typing dots, online pulse, skeletons, reconnect banner, custom scrollbar, and reduced-motion support.
 
 
-This is the live link =>https://realtime-chat-1-4tp1.onrender.com enjoy
+This is the live link =>https://realtime-chat-1-4tp1.onrender.com enjoy.
